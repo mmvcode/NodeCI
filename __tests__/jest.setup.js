@@ -1,3 +1,6 @@
+require("dotenv").config();
+require("dotenv").config();
+
 /**
  * Set the default timeout interval for tests and before/after hooks in milliseconds.
  * This only affects the test file from which this function is called.

@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cookieSession = require("cookie-session");
@@ -29,6 +30,7 @@ app.use(passport.session());
 
 require("./routes/authRoutes")(app);
 require("./routes/blogRoutes")(app);
+require("./routes/uploadRoutes")(app);
 
 if (["production", "ci"].includes(process.env.NODE_ENV)) {
   app.use(express.static("client/build"));
