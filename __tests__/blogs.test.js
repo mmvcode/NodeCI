@@ -38,7 +38,11 @@ describe("When logged in", () => {
 
     test("Submitting then saving adds blog to index page", async () => {
       await page.click("button.green");
-      await page.waitFor(".card");
+      const nav = await page.waitForNavigation({ waitUntil: "networkidle0" });
+      console.log(nav);
+      await page.waitForSelector("div.card-stacked", {
+        waitUnitl: ["networkidle0", "load", "networkidle2", "domcontentloaded"],
+      });
 
       const title = await page.getContentsOf(".card-title");
       const content = await page.getContentsOf("p");
