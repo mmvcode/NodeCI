@@ -16,3 +16,9 @@
 | MONGO_URI | String      | MongoDB connectio  URL |
 | APP_COOKIE_KEY | String      | Random string to be used with cookies |
 | REDIS_URL | String | Redis instance URL |
+
+2. Run
+Execute `npm run dev` from CLI. This starts the backend on port `5000` and the React frontend on port `3000`, with a proxy from `3000` to `5000`
+
+3. Run tests
+Run `npm run test` from CLI
